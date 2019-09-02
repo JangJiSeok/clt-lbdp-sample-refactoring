@@ -132,7 +132,7 @@ public class DemoJpaApplication implements CommandLineRunner{
         String userName="jang jaeock";
         List<Order> list = orderMapper.findAllByEmp(userName);
         log.debug("\n====================================================================================");
-        log.debug("\n Mybatis test");
+        log.debug("\n Mybatis test: orderMapper.findAllByEmp(userName) ");
         log.debug("\n====================================================================================");
         list.forEach(System.out::println);
         log.debug("\n====================================================================================");
