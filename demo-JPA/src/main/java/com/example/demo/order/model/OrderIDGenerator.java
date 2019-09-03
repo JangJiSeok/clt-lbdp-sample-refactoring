@@ -101,3 +101,32 @@ public class OrderIDGenerator  implements IdentifierGenerator {
 
 
 }
+
+
+/*
+
+CREATE TABLE `sequences` (
+  `name` varchar(32) NOT NULL,
+  `currval` bigint(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `nextval`(the_name varchar(32)) RETURNS bigint(20) unsigned
+    MODIFIES SQL DATA
+    DETERMINISTIC
+BEGIN
+     DECLARE ret BIGINT UNSIGNED;
+     UPDATE sequences SET currval=currval+1 WHERE name=the_name;
+     SELECT currval INTO ret FROM sequences WHERE name=the_name limit 1;
+     RETURN ret;
+ END
+
+INSERT INTO `world`.`sequences`
+(`name`)
+VALUES
+(<sequence_orderid>);
+
+
+
+ */
