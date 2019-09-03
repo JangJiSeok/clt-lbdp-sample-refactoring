@@ -1,4 +1,4 @@
-package com.example.demo.order.mapper;
+package com.example.demo.customer;
 
 import com.example.demo.customer.Customer;
 import org.apache.ibatis.annotations.Mapper;

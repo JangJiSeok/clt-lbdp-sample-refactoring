@@ -1,8 +1,5 @@
 package com.example.demo.customer;
 
-import com.example.demo.customer.Customer;
-import com.example.demo.customer.CustomerRepository;
-import com.example.demo.order.mapper.CustomerMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachePut;

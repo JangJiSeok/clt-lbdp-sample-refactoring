@@ -2,6 +2,7 @@ package com.example.demo.order;
 
 import com.example.demo.order.mapper.OrderMapper;
 import com.example.demo.order.model.Order;
+import com.example.demo.order.model.OrderItem;
 import com.example.demo.order.repository.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -135,6 +136,13 @@ public class DemoJpaApplication implements CommandLineRunner{
         log.debug("\n Mybatis test: orderMapper.findAllByEmp(userName) ");
         log.debug("\n====================================================================================");
         list.forEach(System.out::println);
+//        for(Order order :list) {
+//            log.debug(order.toString());
+//            List<OrderItem> orderItemList = order.getOrderItemList();
+//                for(OrderItem orderItem:orderItemList) {
+//                    //log.debug(orderItem.toString());
+//                }
+//            }
         log.debug("\n====================================================================================");
     }
 

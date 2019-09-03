@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface OrderMapper {
 
-    @Select("select * from ordermaster where emp = #{userName}")
+    @Select("select m.id, emp , productcode, productname, qty, price from ordermaster m, orderitem d  where emp = #{userName} and m.id = d.id ")
     List<Order> findAllByEmp(@Param("userName") String userName);
 
 //    @Insert("insert into (emp) values( #{userName} ) ")
