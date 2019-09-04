@@ -140,13 +140,26 @@ public class DemoJpaApplication implements CommandLineRunner{
 //    }
     public void myBatisTest() {
 
-        //String userName="jang jaeock";
-        String userName="Ha kyung";
-        List<Order> list = orderMapper.findAllByEmp(userName);
+        String userName1="jang jaeock";
+        String userName2="Ha kyung";
+        List<Order> list = orderMapper.findAllByEmp(userName1);
         log.debug("\n====================================================================================");
         log.debug("\n Mybatis test: orderMapper.findAllByEmp(userName) ");
         log.debug("\n====================================================================================");
         list.forEach(System.out::println);
+
+        list = orderMapper.search(userName2);
+        log.debug("\n====================================================================================");
+        log.debug("\n Mybatis test: orderMapper.search(userName) ");
+        log.debug("\n====================================================================================");
+        list.forEach(System.out::println);
+
+        list = orderMapper.search2(userName2);
+        log.debug("\n====================================================================================");
+        log.debug("\n Mybatis test: orderMapper.search2(userName) 2222222222222222222222222222222");
+        log.debug("\n====================================================================================");
+        list.forEach(System.out::println);
+
 //        for(Order order :list) {
 //            log.debug(order.toString());
 //            List<OrderItem> orderItemList = order.getOrderItemList();

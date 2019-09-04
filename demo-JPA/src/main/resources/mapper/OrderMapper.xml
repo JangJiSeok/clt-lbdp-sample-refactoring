@@ -9,13 +9,14 @@
         select * from ordermaster where emp=#{emp}
     </select>
 
-<!--    <select id="search" resultType="com.example.demo.order.model.Order">-->
-<!--        select * from ordermaster-->
-<!--        <where>-->
-<!--            <if test="emp !='' and emp !=null ">-->
-<!--                emp=#{emp}-->
-<!--            </if>-->
-<!--        </where>-->
-<!--    </select>-->
+    <select id="search2" resultType="com.example.demo.order.model.Order">
+        select * from ordermaster
+        <where>
+            <if test="emp !='' and emp !=null ">
+                emp=#{emp}
+                and id=2019083108354900000
+            </if>
+        </where>
+    </select>
 
 </mapper>
