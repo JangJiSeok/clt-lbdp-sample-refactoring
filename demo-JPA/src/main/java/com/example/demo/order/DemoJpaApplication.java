@@ -150,7 +150,7 @@ public class DemoJpaApplication implements CommandLineRunner{
 
         list = orderMapper.search(userName2);
         log.debug("\n====================================================================================");
-        log.debug("\n Mybatis test: orderMapper.search(userName) ");
+        log.debug("\n Mybatis test: orderMapper.search(userName) 111111111111111111111111111111111111111111");
         log.debug("\n====================================================================================");
         list.forEach(System.out::println);
 

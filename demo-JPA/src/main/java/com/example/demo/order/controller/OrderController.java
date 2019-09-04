@@ -1,6 +1,7 @@
 package com.example.demo.order.controller;
 
 import com.example.demo.order.exception.ResourceNotFoundException;
+import com.example.demo.order.mapper.OrderMapper;
 import com.example.demo.order.model.*;
 import com.example.demo.order.repository.*;
 import com.example.demo.order.service.OrderService;
@@ -46,6 +47,10 @@ public class OrderController {
 
     @Autowired
     OrderService jpaService;
+
+    @Autowired
+    OrderMapper orderMapper;
+
 
     private final static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
 
@@ -131,6 +136,23 @@ public class OrderController {
         System.out.println("username RequestMapping start!!!");
         return this.userRepository.findByUsername(username);
     }
+
+
+    /**
+     * @param
+     * @param
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @GetMapping(value = "/order/search")
+    public List<Order> search2(@RequestParam(value = "emp", required = false  ,defaultValue = "jang jaeock") String emp
+
+    ) throws Exception {
+        System.out.println("serarch RequestMapping start!!! emp:" + emp);
+        return this.orderMapper.search2(emp,0L);
+    }
+
 
 
 
@@ -256,6 +278,7 @@ public class OrderController {
 
 
     // TODO: 2019-08-31 add Multi orderMaster operation for the test of sequence
+
 
 
 }
