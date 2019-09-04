@@ -1,5 +1,7 @@
 package com.example.demo.order;
 
+import com.example.demo.customer.Customer;
+import com.example.demo.customer.CustomerMapper;
 import com.example.demo.order.mapper.OrderMapper;
 import com.example.demo.order.model.Order;
 import com.example.demo.order.model.OrderItem;
@@ -12,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -42,6 +45,9 @@ public class DemoJpaApplication implements CommandLineRunner{
 
     @Autowired
     private OrderMapper orderMapper;
+
+//    @Autowired
+//    private CustomerMapper customerMapper;
 
 
 	public static void main(String[] args) {
@@ -125,12 +131,17 @@ public class DemoJpaApplication implements CommandLineRunner{
 
         method();
         myBatisTest();
-
+       // myBatisTest2();
     }
 
+//    public void myBatisTest2() {
+//        Customer customer= customerMapper.findByUserNameMybatis("jangjaeok2");
+//        log.debug("Customer:"+customer);
+//    }
     public void myBatisTest() {
 
-        String userName="jang jaeock";
+        //String userName="jang jaeock";
+        String userName="Ha kyung";
         List<Order> list = orderMapper.findAllByEmp(userName);
         log.debug("\n====================================================================================");
         log.debug("\n Mybatis test: orderMapper.findAllByEmp(userName) ");
@@ -144,6 +155,10 @@ public class DemoJpaApplication implements CommandLineRunner{
 //                }
 //            }
         log.debug("\n====================================================================================");
+        log.debug("\n=============search=======================================================================");
+//        List<Order> list2 =orderMapper.search("Ha kyung");
+//        list2.forEach(System.out::println);
+
     }
 
 

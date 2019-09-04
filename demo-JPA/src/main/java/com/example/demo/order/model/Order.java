@@ -29,8 +29,8 @@ public class Order extends AuditModel {
     @OneToMany(mappedBy = "id",fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true) // FetchType.LAZY
     private List<OrderItem> orderItemList;
 
-    @Transient
-    private Currency currency;
+//    @Transient
+//    private Currency currency;
 
     @Transient
     private int testAttr;

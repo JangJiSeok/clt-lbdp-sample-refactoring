@@ -162,7 +162,6 @@ public class OrderController {
 
         // TODO: 2019-08-30 add the header of Returned VO(Value Object), so have to declare "extends AbstractHeader Class" in all VO
 
-
         Order order=new Order();
         order.setEmp("jang jaeock");
         order.setCreatedate(dateTimeFormatter.format(LocalDateTime.now()));
@@ -241,7 +240,7 @@ public class OrderController {
 
         return this.orderRepository.findById(orderId).map(order -> {
             order.setEmp(emp);
-            order.setCurrency(Currency.EURO);
+            //order.setCurrency(Currency.EURO);
 
             List<OrderItem> orderItemList= order.getOrderItemList();
             for(OrderItem orderItem : orderItemList ) {

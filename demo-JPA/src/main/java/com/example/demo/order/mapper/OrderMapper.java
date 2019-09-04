@@ -6,18 +6,20 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
 import java.util.List;
 
 @Mapper
 @Repository
 public interface OrderMapper {
 
-    @Select("select m.id, emp , productcode, productname, qty, price from ordermaster m, orderitem d  where emp = #{userName} and m.id = d.id ")
-    List<Order> findAllByEmp(@Param("userName") String userName);
+    //@Select("select m.id, emp , productcode, productname, qty, price from ordermaster m, orderitem d  where emp = #{emp} and m.id = d.id ")
+    List<Order> findAllByEmp(@Param("emp") String emp);
 
 //    @Insert("insert into (emp) values( #{userName} ) ")
 //    void insertEmp(@Param("userName") String userName);
 
+    List<Order> search(@Param("emp") String emp);
 
 
 }
