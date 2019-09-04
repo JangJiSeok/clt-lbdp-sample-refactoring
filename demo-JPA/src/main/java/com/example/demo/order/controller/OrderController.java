@@ -144,6 +144,7 @@ public class OrderController {
      * @param
      * @return
      * @throws Exception
+     * http get localhost/test/order/search?emp="Ha kyung"
      */
     @GetMapping(value = "/order/search")
     public List<Order> search2(@RequestParam(value = "emp", required = false  ,defaultValue = "jang jaeock") String emp
@@ -177,7 +178,7 @@ public class OrderController {
      * @return
      * @throws Exception
      */
-    @PostMapping(value = "/order/{chidCnt}",  produces = "application/json;charset=UTF-8")
+    @PostMapping(value = "/order/create/{chidCnt}",  produces = "application/json;charset=UTF-8")
     public Order  createTempData(@PathVariable(value = "chidCnt") int chidCnt
     ) throws Exception {
         System.out.println("/order/save RequestMapping start!!!");
