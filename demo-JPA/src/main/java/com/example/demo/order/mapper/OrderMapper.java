@@ -21,6 +21,6 @@ public interface OrderMapper {
 
     List<Order> search(@Param("emp") String emp);
 
-    List<Order> search2(@Param("emp") String emp);
+    List<Order> search2(@Param("emp") String emp,@Param("id") long id );
 
 }

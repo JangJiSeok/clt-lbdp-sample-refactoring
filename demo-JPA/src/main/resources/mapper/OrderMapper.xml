@@ -14,7 +14,9 @@
         <where>
             <if test="emp !='' and emp !=null ">
                 emp=#{emp}
-                and id=2019083108354900000
+            </if>
+            <if test="id !=0 and id != null ">
+                and id=#{id}
             </if>
         </where>
     </select>
